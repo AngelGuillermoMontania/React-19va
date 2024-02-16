@@ -1,0 +1,59 @@
+@use "base.scss";
+@use "sass:math";
+
+@mixin button ($color: #F313AF, $sizeFont: 16px, $radius: 5px) {
+  background-color: $color;
+  font-size: $sizeFont;
+  border: 1px solid black;
+  border-radius: $radius;
+}
+
+%mensajes {
+  border: 3px solid #FFFFFF;
+  padding: 10px;
+  color: #333;
+}
+
+
+.contain-list {
+  border: 1px solid black;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    li {
+      font-weight: bold;
+      color: red;
+      background-color: blue;
+
+      &:hover {
+        background-color: black;
+      }
+    }
+  }
+}
+
+.contain-buttons {
+  display: flex;
+  justify-content: space-around;
+  .primero {
+    @include button;
+  }
+
+  .segundo {
+    @include button($color: pink, $sizeFont: 25px, $radius: 15px);
+  }
+}
+
+.contain-mensajes {
+  p {
+    @extend %mensajes;
+  }
+}
+
+
+
+/* 
+@use el partial es el que se usa con guin bajo para codigo base
+@include el mixin es una funcion para css, reutiliza codigo
+@extend dsa
+*/

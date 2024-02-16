@@ -1,0 +1,14 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+$ancho: 100px;
+
+body {
+  margin: 0;
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: yellow;
+}
+
+p {
+  font: 100% $font-stack;
+}
