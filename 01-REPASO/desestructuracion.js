@@ -5,22 +5,24 @@ const persona = {
   ocupacion: "Programadora",
 };
 
-const { nombre } = persona;
-console.log(nombre); //  const nombre = "Ada"
-const { edad } = persona;
-console.log(edad); // const edad = 208
+// const { ocupacion, edad, nombre, apellido } = persona;
 
-const { apellido, ocupacion } = persona;
+// console.log(nombre); // Ada
+// console.log(ocupacion); // Programadora
+// console.log(apellido); // Lovelace
+
+/* En la desestructuracion de objeto, no importa la posicion si importa el nombre */
 
 const nombres = ["Vale", "Florencia", "Lorena"];
 
-const [nombre1, , nombre3] = nombres;
-console.log(nombre1); // const nombre1 = "Vale"
-console.log(nombre3); // const nombre3 = "Lorena"
+const [pepeHonguito, , cosacosa] = nombres;
 
-// Ejemplo practico
-function nombreCompleto({ nombre, apellido }) {
-  return nombre + " " + apellido;
+console.log(pepeHonguito); // Vale
+console.log(cosacosa); // Florencia
+console.log(Sofia); // Lorena
+
+function saludar({ nombre, apellido }, ciudad) {
+  return `Hola ${nombre} ${apellido}, soy de ${ciudad}`;
 }
 
-console.log(nombreCompleto(persona)); // "Ada Lovelace"
+saludar(persona, "San Juan");

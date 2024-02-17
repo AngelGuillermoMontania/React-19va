@@ -1,11 +1,11 @@
 const arr = ["Coco", "Lorena", "Laura"];
 
-const nuevo = arr.forEach((elem) => elem + " Alumna Ada");
-console.log(nuevo); //undefined
+const nombresCompleto = arr.map((nombre) => `${nombre} estudiante`);
 
-// LOS USADOS EN REACT COMUNMENTE SON MAP Y FILTER
-// map
-const nuevo2 = arr.map((elem) => elem + " Alumna Ada");
-console.log(nuevo2); // ["Coco Alumna Ada", "Lorena Alumna Ada", "Laura Alumna Ada"]
+console.log(nombresCompleto); // ["Coco estudiante", "Lorena estudiante", "Laura estudiante"]
 
-// filter
+const numeros = [50, 24, 98, 56, 24, 35, 87];
+
+const menorOIgual50 = numeros.filter((numero) => numero >= 50);
+
+console.log(menorOIgual50); // [50,98,56,87]

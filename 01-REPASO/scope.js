@@ -6,4 +6,8 @@ function sumar() {
 
 sumar();
 
-console.log(num1); //por scope o contexto de ejecucion es = undefined
+console.log(num1); // por scope o contexto de ejecucion es = undefined
+
+function restar() {
+  console.log(num1); // por scope o contexto de ejecucion es = undefined
+}

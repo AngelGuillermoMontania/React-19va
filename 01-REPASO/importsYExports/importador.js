@@ -1,9 +1,9 @@
-import objetoPrueba from "./exportador"; // POR DEFAULT
-import { nombre, apellido } from "./exportador"; // GENERICO
+import perrito from "./exportador";
 
-// import objetoPrueba, {nombre, apellido} from "./exportador"
+// console.log(saludar) // "saludar"
 
-console.log(objetoPrueba);
+import { nombre, apellido } from "./exportador";
+
 /* {
   ejemplo: function,
   numero: 5,
@@ -18,7 +18,7 @@ console.log(objetoPrueba);
 
 Le puedo dar el nombre que quiera, no lleva llaves
 
-2) Importacion no por default (Generica)
+2) Importacion no por default (Generica/Secundaria)
 
 Debo llamarlo con el mismo nombre, y se hace entre llaves
 
