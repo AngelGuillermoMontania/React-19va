@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
-import ContainCard from "./components/ContainCard";
+import ContainCard from "./components/ContainCardEjemploFirebase";
 
 function App() {
   return (

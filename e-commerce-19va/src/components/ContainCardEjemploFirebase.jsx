@@ -10,7 +10,7 @@ import {
 import db from "../../firebaseConfig.js";
 import { useState } from "react";
 
-export default function ContainCard() {
+export default function ContainCardEjemploFirebase() {
   const [productos, setProductos] = useState([]);
   const [producto, setProducto] = useState({});
 
@@ -113,3 +113,53 @@ export default function ContainCard() {
     </div>
   );
 }
+
+// ----------  OBTENER TODOS LOS DOCUMENTOS DE UNA COLECCION  -----------
+// import { collection, getDocs } from "firebase/firestore";
+
+// const querySnapshot = await getDocs(collection(db, "cities"));
+// querySnapshot.forEach((doc) => {
+//   // doc.data() is never undefined for query doc snapshots
+//   console.log(doc.id, " => ", doc.data());
+// });
+
+// ----------  OBTENER UN SOLO DOCUMENTOS DE UNA COLECCION  -----------
+// import { doc, getDoc } from "firebase/firestore";
+
+// const docRef = doc(db, "cities", "SF");
+// const docSnap = await getDoc(docRef);
+
+// if (docSnap.exists()) {
+//   console.log("Document data:", docSnap.data());
+// } else {
+//   // docSnap.data() will be undefined in this case
+//   console.log("No such document!");
+// }
+
+// ----------- AGREGAR UN DOCUMENTO   ------------------------
+
+// import { collection, addDoc } from "firebase/firestore";
+
+// // Add a new document with a generated id.
+// const docRef = await addDoc(collection(db, "cities"), {
+//   name: "Tokyo",
+//   country: "Japan"
+// });
+// console.log("Document written with ID: ", docRef.id);
+
+// -------------- ACTUALIZAR UN DOCUMENTO ------------------
+
+// import { doc, updateDoc } from "firebase/firestore";
+
+// const washingtonRef = doc(db, "cities", "DC");
+
+// // Set the "capital" field of the city 'DC'
+// await updateDoc(washingtonRef, {
+//   capital: true
+// });
+
+// ------------------- ELIMINAR UN DOCUMENTO ------------------
+
+// import { doc, deleteDoc } from "firebase/firestore";
+
+// await deleteDoc(doc(db, "cities", "DC"));
