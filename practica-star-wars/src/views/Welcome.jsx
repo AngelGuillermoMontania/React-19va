@@ -1,10 +1,17 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import React from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import fondo from "../assets/images/fondo/welcome.svg";
+import usePeople from "../hooks/usePeople";
 
 export default function Welcome() {
   const navigate = useNavigate();
+
+  const { allPeople, getPeopleCarrusel } = usePeople();
+
+  useEffect(() => {
+    getPeopleCarrusel();
+  }, []);
 
   return (
     <Box

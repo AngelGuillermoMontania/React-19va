@@ -30,6 +30,8 @@ export default function Header() {
             {pages.map((page) => (
               <Button
                 key={page}
+                variant="contained"
+                color="secondary"
                 sx={{ my: 2, color: "white", display: "block" }}
                 onClick={() => navigate(`/${page.toLowerCase()}`)}
               >

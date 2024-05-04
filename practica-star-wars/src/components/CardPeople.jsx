@@ -6,8 +6,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function CardPeople({ people }) {
+  const navigate = useNavigate();
+
   return (
     <Grid item columns={3}>
       <Card sx={{ maxWidth: 345 }}>
@@ -26,7 +29,19 @@ export default function CardPeople({ people }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Share</Button>
+          <Button
+            size="small"
+            onClick={() =>
+              navigate(
+                `/people/${people.url.substring(
+                  people.url.length - 2,
+                  people.url.length - 1
+                )}`
+              )
+            }
+          >
+            Share
+          </Button>
         </CardActions>
       </Card>
     </Grid>
