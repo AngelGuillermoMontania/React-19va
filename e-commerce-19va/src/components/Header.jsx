@@ -4,11 +4,16 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Grid, ImageListItem, MenuItem } from "@mui/material";
+import { Badge, Grid, ImageListItem, MenuItem } from "@mui/material";
 import { Navigate, useNavigate } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
 export default function ButtonAppBar() {
   const navigate = useNavigate();
+
+  const { cantidadEnCarrito } = useContext(CartContext);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -61,7 +66,21 @@ export default function ButtonAppBar() {
               </Button>
             </Grid>
           </Grid>
-          <Box sx={{ flexGrow: 0 }}>
+          <Box
+            sx={{
+              flexGrow: 0,
+              display: "flex",
+              justifyContent: "space-between",
+              width: "10%",
+            }}
+          >
+            <Badge
+              badgeContent={cantidadEnCarrito()}
+              color="primary"
+              onClick={() => navigate("/cart")}
+            >
+              <FaShoppingCart height="20" width="20" fontSize="25px" />
+            </Badge>
             <Button color="inherit">Login</Button>
           </Box>
         </Toolbar>

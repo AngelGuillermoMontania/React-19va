@@ -10,9 +10,10 @@ import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import { Grid } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function CardPlanet({ planet }) {
-  const theme = useTheme();
+  const navigate = useNavigate();
 
   return (
     <Grid item columns={2}>

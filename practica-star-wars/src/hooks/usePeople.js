@@ -8,6 +8,7 @@ export default function usePeople() {
   async function getAllPeople() {
     try {
       const { data } = await axios("https://swapi.dev/api/people");
+      console.log(data.results);
       setAllPeople(data.results);
     } catch (error) {
       console.log(error);

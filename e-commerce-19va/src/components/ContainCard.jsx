@@ -34,11 +34,9 @@ export default function ContainCard() {
       docs.forEach((doc) => {
         docsProductos.push({ id: doc.id, ...doc.data() });
       });
-      console.log(docsProductos);
       setProductos(docsProductos);
     }
     async function getOneCategory() {
-      console.log("category", category);
       // 1- Obtiene la coleccion
       const coleccionProducto = collection(db, "producto");
 
@@ -53,7 +51,6 @@ export default function ContainCard() {
       docs.forEach((doc) => {
         docsProductos.push({ id: doc.id, ...doc.data() });
       });
-      console.log(docsProductos);
       setProductos(docsProductos);
     }
 

@@ -1,10 +1,16 @@
 import { Box, Container, Grid } from "@mui/material";
-import React from "react";
-import CardPeople from "../components/CardPeople";
-import fondo from "../assets/images/fondo/fondoPlanet.jfif";
 import CardPlanet from "../components/CardPlanet";
+import fondo from "../assets/images/fondo/fondoPlanet.jfif";
+import { useEffect } from "react";
+import usePlanet from "../hooks/usePlanet";
 
 export default function ContainPlanet() {
+  const { allPlanet, getAllPlanet } = usePlanet();
+
+  useEffect(() => {
+    getAllPlanet();
+  }, []);
+
   return (
     <Box
       sx={{
@@ -15,10 +21,9 @@ export default function ContainPlanet() {
     >
       <Container>
         <Grid container spacing={2} direction="column">
-          <CardPlanet />
-          <CardPlanet />
-          <CardPlanet />
-          <CardPlanet />
+          {allPlanet.map((planet) => (
+            <CardPlanet key={planet.name} planet={planet} />
+          ))}
         </Grid>
       </Container>
     </Box>

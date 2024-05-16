@@ -3,6 +3,7 @@ import CardPeople from "../components/CardPeople";
 import fondo from "../assets/images/fondo/fondoPeople.jpeg";
 import { useEffect } from "react";
 import usePeople from "../hooks/usePeople";
+import imagenes from "../assets/images/characters";
 
 export default function ContainPeople() {
   const { allPeople, getAllPeople } = usePeople();
@@ -16,7 +17,11 @@ export default function ContainPeople() {
       <Container sx={{ display: "flex", justifyContent: "center" }}>
         <Grid container spacing={2}>
           {allPeople.map((elem) => (
-            <CardPeople key={elem.name} people={elem} />
+            <CardPeople
+              key={elem.name}
+              people={elem}
+              img={imagenes[elem.name]}
+            />
           ))}
         </Grid>
       </Container>

@@ -6,11 +6,12 @@ const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   function existe(id) {
+    console.log(id);
     return cart.some((elem) => elem.id == id);
   }
 
   function agregarProducto(producto, cantidad) {
-    if (existe(producto)) {
+    if (existe(producto.id)) {
       const newCart = cart.map((productInCart) => {
         // nuevo array
         if (productInCart.id === producto.id) {
@@ -19,6 +20,7 @@ const CartContextProvider = ({ children }) => {
             cantidad: productInCart.cantidad + cantidad,
           };
         }
+        return productInCart;
       });
       setCart(newCart);
     } else {
@@ -48,23 +50,28 @@ const CartContextProvider = ({ children }) => {
   }
 
   function eliminarPorCantidad(cant, id) {
-    if (existe(producto)) {
+    if (existe(id)) {
       if (cart.find((elem) => elem.id == id).cantidad === 1) {
         const aux = cart.filter((elem) => elem.id !== id);
         return setCart(aux);
       } else {
         const newCart = cart.map((productInCart) => {
           // nuevo array
-          if (productInCart.id === producto.id) {
+          if (productInCart.id === id) {
             return {
               ...productInCart,
-              cantidad: productInCart.cantidad - cantidad,
+              cantidad: productInCart.cantidad - cant,
             };
           }
+          return productInCart;
         });
         setCart(newCart);
       }
     }
+  }
+
+  function cantidadEnCarrito() {
+    return cart.length;
   }
 
   const data = {
@@ -73,6 +80,9 @@ const CartContextProvider = ({ children }) => {
     totalPrecioCarrito,
     totalPrecioPorProducto,
     agregarProducto,
+    cantidadEnCarrito,
+    eliminarPorCantidad,
+    eliminarProductoPorId,
   };
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;

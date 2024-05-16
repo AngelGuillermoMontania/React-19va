@@ -8,17 +8,13 @@ import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-export default function CardPeople({ people }) {
+export default function CardPeople({ people, img }) {
   const navigate = useNavigate();
 
   return (
     <Grid item columns={3}>
       <Card sx={{ maxWidth: 345 }}>
-        {/* <CardMedia
-        sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
-        title="green iguana"
-      /> */}
+        <CardMedia sx={{ height: 140 }} image={img} title="green iguana" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {people?.name}

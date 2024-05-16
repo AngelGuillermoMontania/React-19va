@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DetailProduct from "./components/DetailProduct";
 import { ThemeProvider, createTheme } from "@mui/material";
 import CartContextProvider from "./context/CartContext";
+import Cart from "./components/Cart";
 
 const theme = createTheme({
   palette: {
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<ContainCard />} />
             <Route path="/:category" element={<ContainCard />} />
             <Route path="/detail/:idProduct" element={<DetailProduct />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </CartContextProvider>
       </ThemeProvider>
