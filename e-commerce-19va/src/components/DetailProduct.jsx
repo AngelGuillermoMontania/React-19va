@@ -90,8 +90,10 @@ export default function DetailProduct() {
           </CardContent>
         </Box>
         <Box>
-          <CardContent onClick={() => agregarProducto(producto, 1)}>
-            <Button>Agregar al carrito</Button>
+          <CardContent>
+            <Button onClick={(e) => agregarProducto(producto, 1)}>
+              Agregar al carrito
+            </Button>
           </CardContent>
         </Box>
         <CardMedia

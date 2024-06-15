@@ -6,6 +6,8 @@ import DetailProduct from "./components/DetailProduct";
 import { ThemeProvider, createTheme } from "@mui/material";
 import CartContextProvider from "./context/CartContext";
 import Cart from "./components/Cart";
+import { useAuth0 } from "@auth0/auth0-react";
+import ModifyProduct from "./components/ModifyProduct";
 
 const theme = createTheme({
   palette: {
@@ -14,7 +16,6 @@ const theme = createTheme({
     },
   },
 });
-
 function App() {
   return (
     <BrowserRouter>
@@ -26,6 +27,7 @@ function App() {
             <Route path="/:category" element={<ContainCard />} />
             <Route path="/detail/:idProduct" element={<DetailProduct />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/modificarProductos" element={<ModifyProduct />} />
           </Routes>
         </CartContextProvider>
       </ThemeProvider>

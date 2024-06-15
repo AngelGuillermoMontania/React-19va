@@ -86,7 +86,7 @@ export default function Cart() {
                     <ButtonGroup>
                       <Button
                         aria-label="reduce"
-                        onClick={() => {
+                        onClick={(e) => {
                           eliminarPorCantidad(1, product.id);
                         }}
                       >
@@ -95,7 +95,7 @@ export default function Cart() {
                       <Button
                         aria-label="increase"
                         disabled={product.stock == product.cantidad}
-                        onClick={() => {
+                        onClick={(e) => {
                           if (product.stock >= product.cantidad + 1) {
                             agregarProducto(product, 1);
                           }
@@ -109,7 +109,7 @@ export default function Cart() {
                 <Box>
                   <Button
                     variant="contained"
-                    onClick={() => eliminarProductoPorId(product.id)}
+                    onClick={(e) => eliminarProductoPorId(product.id)}
                   >
                     Remover
                   </Button>
@@ -130,7 +130,7 @@ export default function Cart() {
               size="large"
               variant="contained"
               color="error"
-              onClick={() => {
+              onClick={(e) => {
                 limpiarCarrito();
               }}
             >
